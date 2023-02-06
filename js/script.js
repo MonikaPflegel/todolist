@@ -1,20 +1,47 @@
 {
-    const tasks = [];
-
-    const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
-        render();
+    let tasks = [];
+let hideDoneTasks = false;
+    
+const removeTask = (taskIndex) => {
+    tasks=[
+        ...tasks.slice(0, taskIndex),
+        ...tasks.slice(taskIndex, +1);
+     ];
+      render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks=[
+            ...tasks.slice(0, taskIndex),{
+              ...tasks[taskIndex],
+              done: !tasks[taskIndex].done,},
+              ...tasks.slice(taskIndex +1), ];
+            
+
         render();
     };
+   
 
+    const markAllTasksDone = ()=> {
+tasks=tasks.map((task)=> ({
+    ...task,
+    done:true,
+}
+
+));
+render();
+
+    };
     const addNewTask = (newTaskContent) => {
-        tasks.push({ content: newTaskContent });
+        tasks= [...tasks,{ content: newTaskContent }];
         render()
     };
+
+const toggleHideDoneTasks = ()=> {
+    hideDoneTasks = !hideDoneTasks;
+    render();
+};
+
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
