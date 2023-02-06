@@ -20,12 +20,28 @@
     background: teal;
     color: white;
     border: none;
+    transition: 0.3s;
 }
 
 .form__button:hover {
     background-color: rgb(17, 144, 144);
+    transform: scale(1.1);
 }
 
 .form__button:active {
     background: rgb(23, 166, 166);
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.buttons__button {
+    background: transparent;
+    color: teal;
+    border:none;
+    margin: 0 0 0 20px;
+    transition: color 0.3s;
 }
