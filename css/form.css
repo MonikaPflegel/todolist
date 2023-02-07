@@ -1,17 +1,21 @@
 .form {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 20px;
+    background-color: white;
+    align-content: center;
 }
 
 @media(max-width: 767px) {
     .form {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 }
 
 .form__input {
-    padding: 10px;
+    padding: 5px 10px;
 
 }
 
@@ -26,22 +30,28 @@
 .form__button:hover {
     background-color: rgb(17, 144, 144);
     transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media (max-width:767px) {
+    .form__button:hover {
+        transform: scale(1.08);
+    }
 }
 
 .form__button:active {
     background: rgb(23, 166, 166);
 }
+
 .buttons {
     display: flex;
     flex-wrap: wrap;
 }
 
-
-
 .buttons__button {
     background: transparent;
     color: teal;
-    border:none;
+    border: none;
     margin: 0 0 0 20px;
     transition: color 0.3s;
 }
