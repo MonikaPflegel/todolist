@@ -19,9 +19,7 @@
             },
             ...tasks.slice(taskIndex + 1),
         ];
-
-
-        render();
+ render();
     };
 
     const addNewTask = (newTaskContent) => {
@@ -81,7 +79,7 @@
             </li>
            `;
     }
-    document.querySelector(".js-tasks").innerHTML = tasksList;
+    document.querySelector(".js-tasks").innerHTML = tasks;
 
     bindRemoveEvents();
     bindToggleDoneEvents();
